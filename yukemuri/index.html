@@ -1,8 +1,23 @@
-<title>湯釜場</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>湯けむり繁盛記</title>
+<meta name="theme-color" content="#0e1320">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="湯けむり繁盛記">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+</head>
+<body>
 <style>
+html,body{background:#0e1320}
 /* 上が仕事場（360×520 の画。絵札はSVGで描き起こし）、下が強化メニュー */
 :root{
   --sumi:#0e1320; --ai:#1a2338; --ai-up:#232e49;
@@ -1378,3 +1393,6 @@ setInterval(save,5000); document.addEventListener("visibilitychange",function(){
 try{ if(window.claude&&window.claude.hot){ window.claude.hot.snapshot(function(){return {s:S};}); var d=window.claude.hot.data; if(d&&d.s){ S=d.s; applyLv(); syncBantos(); renderPanel(); } } }catch(e){}
 })();
 </script>
+
+</body>
+</html>
