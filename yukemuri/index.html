@@ -1089,7 +1089,7 @@ function nameFrame(cx,y,w){ var fs=parseFloat((ctx.font.match(/(\d+(?:\.\d+)?)px
 /* 名前札の位置：建物ごとに左右へ少しずらす */
 var SPRING_LO=[0,0], SPRING_LO0=[44,74];
 var LABOFF={spring:[0,0],kama:[30,0],room:[-48,0],nagaya:[-52,0],tabiya:[-30,0],kitchen:[26,0],wood:[0,0],gate:[-34,0],onsen:[-46,0],sake:[-44,0],hall:[42,0]};
-function labOff(f){ if(f.id==="room"&&f.lv>=8) return [64,24]; if(!f.lv&&f.id!=="spring") return [0,0]; return LABOFF[f.id]; }
+function labOff(f){ if(f.id==="room"&&f.lv>=8) return [64,24]; if(f.id==="room"&&f.lv>0) return [Math.min(150,roomPic(f.lv).w*.5-24),0]; if(!f.lv&&f.id!=="spring") return [0,0]; return LABOFF[f.id]; }
 function labF(f,t,x,y){ if(f!==F.waka){ y+=15; var lo=labOff(f); if(lo){ x+=lo[0]; y+=lo[1]; } } var up0=canUp(f), tw0=ctx.measureText(t).width+(up0?ctx.measureText("▲").width+2:0); x=Math.max(tw0/2+12,Math.min(VW-tw0/2-12,x)); labR(f,x,y,Math.max(tw0,30)); nameFrame(x,y,tw0+16); if(!up0){ lab(t,x,y); return; }
   var tw=ctx.measureText(t).width, m=ctx.measureText("▲").width, gap=2, tot=tw+gap+m, sx=x-tot/2;
   ctx.textAlign="left"; lab(t,sx,y); var pul=.6+.4*Math.sin(T*4);
